@@ -6,6 +6,8 @@ from utils.strength_evaluator import check_strength
 
 app = Flask(__name__)
 CORS(app)
+# Updated CORS
+# CORS(app, resources={r"/api/*": {"origins": ["https://your-frontend-url.com"]}})
 
 @app.route('/api/generate', methods=['POST'])
 def generate():
@@ -28,5 +30,6 @@ def generate():
         'crack_time': strength_info['crack_time_display']
     })
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=app.config['DEBUG'])
+# FOR RUNNING LOCALLY
+# if __name__ == '__main__':
+#     app.run(host='0.0.0.0', port=5000, debug=app.config['DEBUG'])
