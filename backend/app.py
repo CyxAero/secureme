@@ -5,10 +5,9 @@ from generators.passphrase_generator import generate_passphrase
 from utils.strength_evaluator import check_strength
 
 app = Flask(__name__)
-# ONLINE CORS
-CORS(app, resources={r"/api/*": {"origins": ["https://vercel.com/cyxs-projects-2e239b9e/secureme/eT3QPxYfvWMtSnLDb3a61GKSDJJX"]}})
-# LOCAL CORS
-# CORS(app)
+CORS(app)
+# Updated CORS
+# CORS(app, resources={r"/api/*": {"origins": ["https://your-frontend-url.com"]}})
 
 @app.route('/api/generate', methods=['POST'])
 def generate():
